@@ -1,7 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-
 /* mixins, variables, etc. */
 
 $gray-medium-light: #eaeaea;
@@ -12,6 +11,16 @@ $gray-medium-light: #eaeaea;
   box-sizing:         border-box;
 }
 
+header {
+  background-color: teal;
+  a {
+    color: white;
+  }
+  li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+}
 body {
   padding-top: 60px;
   color: teal;
@@ -67,16 +76,16 @@ p {
 
 /* header */
 header {
-  a {
-    margin-right: 15px;
-    color: teal
+  li {
+    // margin-right: 15px;
+    float: right;
   }
 }
 #logo {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: teal;
+  color: white;
   // padding-top: 9px;
   &:hover {
     color: #fff;
@@ -188,3 +197,20 @@ label {
   @include box_sizing;
 }
 
+@media (max-width: 800px) {
+  footer {
+    small {
+      display: block;
+      float: none;
+      margin-bottom: 1em;
+    }
+    ul {
+      float: none;
+ s     padding: 0;
+      li {
+        float: none;
+        margin-left: 0;
+      }
+    }
+  }
+}
