@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.0.2'
 
 gem 'rails',                      '6.0.3.4'
+gem 'aws-sdk-s3', require: false
 gem 'image_processing',           '1.9.3'
 gem 'mini_magick',                '4.9.5'
 gem 'bootstrap-sass',             '3.4.1'
@@ -17,7 +18,7 @@ gem 'turbolinks',                 '5.2.1'
 gem 'jbuilder',                   '2.10.0'
 gem 'bootsnap',                   '1.4.6', require: false
 gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '3543363026121ee28d98dfce4cb6366980c055ee'
-gem 'aws-sdk-s3', require: false
+
 
 group :development, :test do
   gem 'sqlite3', '1.4.2'
@@ -26,7 +27,7 @@ end
 
 group :development do
   gem 'web-console',           '4.0.2'
-  gem 'listen',                '3.2.1'
+  # gem 'listen',                '3.2.1'
   gem 'spring',                '2.1.1'
   gem 'spring-watcher-listen', '2.0.1'
 end
