@@ -12,6 +12,10 @@
 /db/*.sqlite3-journal
 /db/*.sqlite3-*
 
+# Hide a few config files
+# /config/development.rb
+# /config/production.rb
+/config/storage.yml
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
