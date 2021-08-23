@@ -4,6 +4,7 @@ ruby '3.0.2'
 
 gem 'rails',                      '6.0.3.4'
 gem 'aws-sdk-s3', require: false
+gem 'paperclip',                  '6.1.0'
 gem 'image_processing',           '1.9.3'
 gem 'mini_magick',                '4.9.5'
 gem 'bootstrap-sass',             '3.4.1'
