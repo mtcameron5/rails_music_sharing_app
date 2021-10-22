@@ -2,10 +2,10 @@
 
 
 <% @songs.each do |song| %>
-  <h3><%= song.name %> by <small class="artist_name"><%= song.artist_name %></small></h3>
+  <h3><%= song.artist_name %> by <small class="artist_name"><%= song.artist_name %></small></h3>
+  <div class="player btn btn-outline-secondary, html5">
+    <%= link_to 'Play Song', song.mp3_file %>
+  </div>
   <%# <button><%= link_to "Play Song", song.mp3_file, class: "html5" %>
-  <% if rails_blob_path(song.mp3_file) %>
-    <audio src=<%= rails_blob_path(song.mp3_file) %> controls></audio>
-  <% end %>
 
 <% end %>

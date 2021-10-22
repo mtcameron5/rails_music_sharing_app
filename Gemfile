@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.0.2'
 
 gem 'rails',                      '6.0.3.4'
-gem 'aws-sdk-s3', require: false
+gem 'aws-sdk-s3', '~> 1'
 gem 'paperclip',                  '6.1.0'
 gem 'image_processing',           '1.9.3'
 gem 'mini_magick',                '4.9.5'
@@ -17,6 +17,7 @@ gem 'sass-rails',                 '6.0.0'
 gem 'webpacker',                  '4.2.2'
 gem 'turbolinks',                 '5.2.1'
 gem 'jbuilder',                   '2.10.0'
+gem 'pry'
 gem 'bootsnap',                   '1.4.6', require: false
 gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '3543363026121ee28d98dfce4cb6366980c055ee'
 

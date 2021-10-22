@@ -44,5 +44,4 @@ class User < ApplicationRecord
   def feed
     Micropost.where("user_id = ?", id)
   end
-
 end
