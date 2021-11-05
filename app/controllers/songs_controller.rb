@@ -8,9 +8,8 @@ class SongsController < ApplicationController
   end
 
   def create
-    # binding.pry
-    # Song.validate_attachment(song_params[:mp3_file])
     @song = Song.new song_params
+    # binding.pry
     if @song.save
       flash[:success] = "Song Uploaded"
       redirect_to songs_path

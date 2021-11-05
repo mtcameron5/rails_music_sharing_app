@@ -1,4 +1,5 @@
 class Song < ApplicationRecord
+  ACCEPTABLE_FILE_TYPE = 'audio/mpeg'
   # include ActiveModel::Validations
   # validates_with FileValidations
 
@@ -15,12 +16,10 @@ class Song < ApplicationRecord
       errors.add(:mp3_file, "is too big. Must be 10MB or smaller.")
     end
 
-    acceptable_types = ['audo/mpeg']
-    unless acceptable_types.include?(mp3file.content_type)
+    unless ACCEPTABLE_FILE_TYPE == mp3_file.content_type
       errors.add(:mp3_file, "must be MP3.")
     end
   end
-
   private
   def aws_client
     binding.pry
