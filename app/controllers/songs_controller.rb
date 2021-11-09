@@ -8,8 +8,8 @@ class SongsController < ApplicationController
   end
 
   def create
-    @song = Song.new song_params
     # binding.pry
+    @song = current_user.songs.build(song_params)
     if @song.save
       flash[:success] = "Song Uploaded"
       redirect_to songs_path
@@ -20,7 +20,7 @@ class SongsController < ApplicationController
 
   private
   def song_params
-    params.require(:song).permit(:mp3_file, :artist_name, :song_genre, :authenticity_token)
+    params.require(:song).permit(:mp3_file, :image_file, :genre, :authenticity_token, :name)
   end
 
 end

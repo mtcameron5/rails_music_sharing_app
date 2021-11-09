@@ -7,6 +7,7 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
+require("packs/songplayer")
 require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
