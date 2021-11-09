@@ -11,12 +11,15 @@
     </section>
   </aside>
   <div class="col-md-8">
-    <% if @user.microposts.any? %>
-      <h3>Microposts (<%= @user.microposts.count %>)</h3>
-      <ol class="microposts">
-        <%= render @microposts %>
-      </ol>
-      <%= will_paginate @microposts %>
+    Songs:
+    <% @user.songs.each do |song| %>
+      <h3><%= song.name %> by <small class="artist_name"><%= link_to song.user.name, song.user %></small></h3>
+      <div class="btn html5 play-button">
+        <%# binding.pry %>
+        <a href="#" artist=<%= raw song.user.name.to_json %> genre=<%= raw song.genre.to_json %> title=<%= raw song.name.to_json %> music-file=<%= rails_blob_path(song.mp3_file) %> image-file=<%= rails_blob_path(song.image_file.attachment) %>>Play</a>
+      </div>
     <% end %>
+
   </div>
+  <%= render partial: 'shared/music_player', locals: {:@songs => @user.songs} %>
 </div>
