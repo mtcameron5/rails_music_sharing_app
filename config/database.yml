@@ -21,11 +21,13 @@ test:
   database: db/test.sqlite3
 
 production:
-  adapter: sqlite3
-  encoding: unicode
-  # For details on connection pooling, see Rails configuration guide
-  # https://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  database: the_music_sharing_app
-  username: the_music_sharing_app
-  password: <%= ENV['MUSIC_SHARING_APP_DATABASE_PASSWORD'] %>
+  <<: *defalt
+  database: db/test.sqlite3
+  # adapter: sqlite3
+  # encoding: unicode
+  # # For details on connection pooling, see Rails configuration guide
+  # # https://guides.rubyonrails.org/configuring.html#database-pooling
+  # pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  # database: the_music_sharing_app
+  # username: the_music_sharing_app
+  # password: <%= ENV['MUSIC_SHARING_APP_DATABASE_PASSWORD'] %>
