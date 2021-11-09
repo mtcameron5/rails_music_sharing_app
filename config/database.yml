@@ -24,10 +24,10 @@ default: &default
 
 test:
   <<: *default
-  database: db/test.sqlite3
+  database: my_app_test
 
 production:
-  <<: *defalt
+  <<: *default
   # adapter: sqlite3
   # encoding: unicode
   # # For details on connection pooling, see Rails configuration guide
