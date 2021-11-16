@@ -22,5 +22,4 @@ class SongsController < ApplicationController
   def song_params
     params.require(:song).permit(:mp3_file, :image_file, :genre, :authenticity_token, :name)
   end
-
 end
